@@ -1,6 +1,9 @@
 class Interpreter:
 	def __init__ (self):
 		self.commands = {}
+		#Predefined commands
+		self.addCommand ("listCommands", self.listCommands)
+		
 	def call (self, raw_command):
 		if type (raw_command) != type (""): raise TypeError ("Input has to be a string")#Only string inputs
 		self.raw = delSpaces (raw_command)#Interiorize the command
